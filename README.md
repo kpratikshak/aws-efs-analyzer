@@ -118,26 +118,13 @@ Optimization insights
 
 Contributions are welcome!
 
-If you have ideas for new features (e.g., automated lifecycle policy generation), feel free to:
-
 # Fork the project
 git checkout -b feature/AmazingFeature
 git commit -m "Add some AmazingFeature"
 git push origin feature/AmazingFeature
 
-Then open a Pull Request 🚀
 
 📄 License
 
 Distributed under the MIT License.
 See the LICENSE file for more information.
-
-If you'd like, I can also create:
-
-🔥 A more polished “open-source style” README with badges
-
-📊 Architecture diagram section
-
-☁️ Lambda deployment instructions
-
-🧾 Hashnode-ready blog version of this README
