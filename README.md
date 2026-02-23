@@ -1,6 +1,23 @@
 # 🚀 AWS EFS Analyze
 
-r: Cost Optimization ToolAWS EFS Analyzer is a high-performance command-line tool built to help AWS users identify massive cost-saving opportunities within their Elastic File System (EFS) environments.
+EFS Analyzer - Analyzes EFS mount points for cost optimization opportunities
+
+Lambda script scans an Amazon EFS (Elastic File System) mount point to identify cost 
+optimization opportunities by categorizing files based on last access time and 
+calculating potential cost savings across different EFS storage tiers.
+
+Features:
+- Recursive scanning with parallel processing for large file systems
+- File categorization based on last access time (7, 14, 30, 60, 90 days, 1-2 years, 2+ years)
+- Cost analysis across different EFS tiers (Standard, Infrequent Access, Archive)
+- Detailed HTML and text reports with visualizations
+- Real-time progress tracking
+- System directory exclusion and symbolic link loop detection
+
+IMPORTANT: This tool performs READ-ONLY operations and does not modify any files
+or change your EFS configuration. It only analyzes file metadata to provide
+recommendations for potential cost savings.
+
 # ✨ Key Features:
 # ⚡ Parallel Processing: Scans massive file systems efficiently using multi-core processing (customizable thread count).
 # 📊 Smart Categorization: Groups files by age based on last access time (7, 14, 30, 60, 90 days, 1 year, and 2+ years).
