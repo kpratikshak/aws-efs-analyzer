@@ -15,10 +15,12 @@ An active AWS EFS mount point on your Linux/Unix system.
 # Setup: Clone the repository:Bash git clone https://github.com/kpratikshak/aws-efs-analyzer.git
 # cd aws-efs-analyzer
  # Install dependencies:pip install -r requirements.txt
- #  🚀 Usage: Run the analyzer by pointing it to your EFS mount :
- path:Bashpython3 efs_analyzer.py --path /mnt/efs_data --threads 4 --output-dir ./reports
-Options:FlagDescriptionDefault--path(Required) 
-Path to the EFS mount pointN/A--threadsNumber of parallel threads for scanningCPU Implements robust permission checks to ensure the scan completes even when encountering restricted files.
+ #   Usage: Run the analyzer by pointing it to your EFS mount :
+ path:python3 efs_analyzer.py --path /mnt/efs_data --threads 4 --output-dir ./reports
+Options:
+FlagDescriptionDefault--path(Required) 
+Path to the EFS mount point:
+N/A--threadsNumber of parallel threads for scanningCPU Implements robust permission checks to ensure the scan completes even when encountering restricted files.
 
  # Contributions are welcome! 
  If you have ideas for new features (like automated lifecycle policy generation), feel free to:Fork the Project: 
