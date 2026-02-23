@@ -12,7 +12,7 @@ r: Cost Optimization ToolAWS EFS Analyzer is a high-performance command-line too
 # 🛠 Installation Prerequisites:
 Python 3.8 or higher 
 An active AWS EFS mount point on your Linux/Unix system.
-# Setup: Clone the repository:Bash git clone https://github.com/your-username/aws-efs-analyzer.git
+# Setup: Clone the repository:Bash git clone https://github.com/kpratikshak/aws-efs-analyzer.git
 # cd aws-efs-analyzer
  # Install dependencies:pip install -r requirements.txt
  #  🚀 Usage: Run the analyzer by pointing it to your EFS mount :
