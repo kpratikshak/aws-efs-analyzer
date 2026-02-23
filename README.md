@@ -1,51 +1,143 @@
-# 🚀 AWS EFS Analyze
+🚀 AWS EFS Analyzer
 
-EFS Analyzer - Analyzes EFS mount points for cost optimization opportunities
+AWS EFS Analyzer is a Python-based tool that scans an Amazon EFS (Elastic File System) mount point to identify cost optimization opportunities.
 
-Lambda script scans an Amazon EFS (Elastic File System) mount point to identify cost 
-optimization opportunities by categorizing files based on last access time and 
-calculating potential cost savings across different EFS storage tiers.
+It categorizes files based on last access time and calculates potential cost savings across different EFS storage tiers — helping you make informed lifecycle policy decisions.
 
-Features:
-- Recursive scanning with parallel processing for large file systems
-- File categorization based on last access time (7, 14, 30, 60, 90 days, 1-2 years, 2+ years)
-- Cost analysis across different EFS tiers (Standard, Infrequent Access, Archive)
-- Detailed HTML and text reports with visualizations
-- Real-time progress tracking
-- System directory exclusion and symbolic link loop detection
+⚠️ IMPORTANT:
+This tool performs READ-ONLY operations.
+It does NOT modify files or change your EFS configuration.
+It only analyzes file metadata to recommend potential cost savings.
 
-IMPORTANT: This tool performs READ-ONLY operations and does not modify any files
-or change your EFS configuration. It only analyzes file metadata to provide
-recommendations for potential cost savings.
+✨ Key Features
+⚡ Parallel Processing
 
-# ✨ Key Features:
-# ⚡ Parallel Processing: Scans massive file systems efficiently using multi-core processing (customizable thread count).
-# 📊 Smart Categorization: Groups files by age based on last access time (7, 14, 30, 60, 90 days, 1 year, and 2+ years).
-# 💰 Cost Projection: Real-time estimation of savings if data is moved to EFS Infrequent Access or Archive tiers.
-# 🛡️ Safety First: * Automatically excludes system directories (/proc, /sys, /dev).Detects and prevents symbolic link loops.Warns about high CPU usage before resource-intensive scans.
-# 📈 Rich Reporting: Generates detailed reports in both Interactive HTML (with visualizations) and Plain Text.
-# ⏱️ Real-time Progress: Integrated progress bar with completion percentage, file count, and ETA.
+Efficiently scans large file systems using multi-core processing (customizable thread count).
 
-# 🛠 Installation Prerequisites:
-Python 3.8 or higher 
-An active AWS EFS mount point on your Linux/Unix system.
-# Setup: Clone the repository:
-Bash git clone https://github.com/kpratikshak/aws-efs-analyzer.git
+📊 Smart Categorization
 
-# cd aws-efs-analyzer
+Groups files based on last access time:
 
- # Install dependencies:pip install -r requirements.txt
- #   Usage:
- Run the analyzer by pointing it to your EFS mount :
- path:python3 efs_analyzer.py --path /mnt/efs_data --threads 4 --output-dir ./reports
-Options:
-FlagDescriptionDefault--path(Required) 
-Path to the EFS mount point:
-N/A--threadsNumber of parallel threads for scanningCPU Implements robust permission checks to ensure the scan completes even when encountering restricted files.
+0–7 days
 
- # Contributions are welcome! 
- If you have ideas for new features (like automated lifecycle policy generation), feel free to:Fork the Project: 
- Create your Feature Branch (git checkout -b feature/AmazingFeature)Commit your Changes (git commit -m 'Add some AmazingFeature')
- Push to the Branch (git push origin feature/AmazingFeature)
- Open a Pull Request
- 📄 License: Distributed under the MIT License. See LICENSE for more information
+8–14 days
+
+15–30 days
+
+31–60 days
+
+61–90 days
+
+91–365 days
+
+1–2 years
+
+2+ years
+
+💰 Cost Projection
+
+Estimates potential savings when transitioning data to:
+
+EFS Standard
+
+EFS Infrequent Access (IA)
+
+EFS Archive
+
+🛡️ Safety First
+
+Automatically excludes system directories (/proc, /sys, /dev, etc.)
+
+Detects and prevents symbolic link loops
+
+Warns about high CPU usage before intensive scans
+
+Implements robust permission handling to continue scanning even if restricted files are encountered
+
+📈 Rich Reporting
+
+Generates detailed reports in:
+
+📄 Plain Text
+
+🌐 Interactive HTML (with visualizations)
+
+⏱️ Real-Time Progress Tracking
+
+Displays:
+
+Progress bar
+
+File count
+
+Completion percentage
+
+ETA
+
+🛠 Installation
+Prerequisites
+
+Python 3.8+
+
+An active AWS EFS mount point on a Linux/Unix system
+
+Clone the Repository
+git clone https://github.com/kpratikshak/aws-efs-analyzer.git
+cd aws-efs-analyzer
+Install Dependencies
+pip install -r requirements.txt
+🚀 Usage
+
+Run the analyzer by pointing it to your EFS mount:
+
+python3 efs_analyzer.py --path /mnt/efs_data --threads 4 --output-dir ./reports
+⚙️ Available Options
+Flag	Description	Default
+--path	(Required) Path to the EFS mount point	N/A
+--threads	Number of parallel threads for scanning	CPU core count
+--output-dir	Directory to store reports	./reports
+📊 Example Output
+
+After completion, the tool generates:
+
+📄 efs_report_<timestamp>.txt
+
+🌐 efs_report_<timestamp>.html
+
+These reports include:
+
+Storage distribution by access time
+
+Tier recommendations
+
+Estimated monthly savings
+
+Optimization insights
+
+🤝 Contributing
+
+Contributions are welcome!
+
+If you have ideas for new features (e.g., automated lifecycle policy generation), feel free to:
+
+# Fork the project
+git checkout -b feature/AmazingFeature
+git commit -m "Add some AmazingFeature"
+git push origin feature/AmazingFeature
+
+Then open a Pull Request 🚀
+
+📄 License
+
+Distributed under the MIT License.
+See the LICENSE file for more information.
+
+If you'd like, I can also create:
+
+🔥 A more polished “open-source style” README with badges
+
+📊 Architecture diagram section
+
+☁️ Lambda deployment instructions
+
+🧾 Hashnode-ready blog version of this README
