@@ -86,12 +86,16 @@ git clone https://github.com/kpratikshak/aws-efs-analyzer.git
 cd aws-efs-analyzer
 Install Dependencies
 pip install -r requirements.txt
-🚀 Usage
+
+
+🚀 Usage:
 
 Run the analyzer by pointing it to your EFS mount:
 
 python3 efs_analyzer.py --path /mnt/efs_data --threads 4 --output-dir ./reports
+
 ⚙️ Available Options
+
 Flag	Description	Default
 --path	(Required) Path to the EFS mount point	N/A
 --threads	Number of parallel threads for scanning	CPU core count
@@ -117,12 +121,6 @@ Optimization insights
 🤝 Contributing
 
 Contributions are welcome!
-
-# Fork the project
-git checkout -b feature/AmazingFeature
-git commit -m "Add some AmazingFeature"
-git push origin feature/AmazingFeature
-
 
 📄 License
 
